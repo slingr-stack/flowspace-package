@@ -1,0 +1,79 @@
+{
+    "name": "flowspace",
+    "label": "Flowspace",
+    "dependencies": [
+        {
+            "type": "service",
+            "name": "http",
+            "version": "v1.8.6"
+        }
+    ],
+    "configuration": [
+        {
+            "name":"flowspaceApiKey",
+            "label":"Flowspace API Key",
+            "description": "Flowspace uses the API key to allow access to the API",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "flowspaceEnvironment",
+            "label": "Flowspace environment",
+            "type": "buttonsGroup",
+            "required": true,
+            "description": "Wether the API calls the SANDBOX or PRODUCTION environment",
+            "defaultValue": "SANDBOX",
+            "typeOptions": {
+                "allowCustom": true,
+                "possibleValues": [
+                    {
+                        "label": "Sandbox",
+                        "name": "SANDBOX"
+                    },
+                    {
+                        "label": "Production",
+                        "name": "PRODUCTION"
+                    }
+                ]
+            }
+        },
+        {
+            "name":"remoteSecret",
+            "label":"Remote Secret",
+            "description": "Flowspace uses the API key to allow access to the API",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "webhook",
+            "label": "Webhook URL",
+            "type": "label",
+            "value": "@config.WEBHOOK_URL"
+        }
+    ],
+    "configurationBuilder": "/configurationBuilder.js",
+    "events": [
+        {
+            "label": "Webhook",
+            "name": "webhook",
+            "description": "Event triggered when there is a webhook coming from Flowspace."
+        }
+    ],
+    "metadata": [
+        {   
+            "type": "script",
+            "namespace": "graphql",
+            "path": "/scripts/graphql.js"
+        },
+        {   
+            "type": "script",
+            "namespace": "utils",
+            "path": "/scripts/utils.js"
+        },
+        {
+            "type": "listener",
+            "namespace": "webhook",
+            "path": "/listeners/webhook.js"
+        }
+    ]
+}
