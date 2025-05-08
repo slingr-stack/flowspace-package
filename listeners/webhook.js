@@ -16,7 +16,7 @@ listeners.defaultWebhookFlowspace = {
         }
         signature = signature.replace(/^sha256\=/, '');
         let body = event.data.rawBody;
-        if (pkg.flowspace.functions.verifySignature(body, signature)) {
+        if (pkg.flowspace.utils.verifySignature(body, signature)) {
             sys.events.triggerEvent('flowspace:webhook', event.data.body);
             return 'ok';
         } else {
