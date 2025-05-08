@@ -51,7 +51,6 @@
             "value": "@config.WEBHOOK_URL"
         }
     ],
-    "configurationBuilder": "/configurationBuilder.js",
     "events": [
         {
             "label": "Webhook",
