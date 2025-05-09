@@ -24,7 +24,7 @@ exports.query = (query, variables) => {
     };
     sys.logs.debug(`GraphQL: ${query.substring(0, 15)}...`, body);
     let response = svc.http.post({
-        path: url,
+        url: url,
         headers: {
             'Flowspace-Auth': apiKey,
             'Content-Type': 'application/json',
