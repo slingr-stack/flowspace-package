@@ -42,7 +42,7 @@
             "label":"Remote Secret",
             "description": "Flowspace uses the API key to allow access to the API",
             "type": "text",
-            "required": true
+            "required": false
         },
         {
             "name": "webhook",
