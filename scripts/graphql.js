@@ -1,5 +1,5 @@
 const FLOWSPACE_URL = 'https://api.flow.space';
-const FLOWSPACE_SANDBOX_URL = 'https://flowspace.dev';
+const FLOWSPACE_SANDBOX_URL = 'https://api.flowspace.dev';
 
 /**
  * Execute a query on the Flowspace
